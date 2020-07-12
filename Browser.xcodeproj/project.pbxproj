@@ -13,6 +13,7 @@
 		6BAE5F5424BB57F600DF3056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAE5F5224BB57F600DF3056 /* Main.storyboard */; };
 		6BAE5F5624BB57F700DF3056 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BAE5F5524BB57F700DF3056 /* Assets.xcassets */; };
 		6BAE5F5924BB57F700DF3056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BAE5F5724BB57F700DF3056 /* LaunchScreen.storyboard */; };
+		6BAE5F6224BB5A8900DF3056 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BAE5F6124BB5A8900DF3056 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6BAE5F5524BB57F700DF3056 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BAE5F5824BB57F700DF3056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BAE5F5A24BB57F700DF3056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BAE5F6124BB5A8900DF3056 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BAE5F6224BB5A8900DF3056 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 			children = (
 				6BAE5F4B24BB57F600DF3056 /* Browser */,
 				6BAE5F4A24BB57F600DF3056 /* Products */,
+				6BAE5F6024BB5A8900DF3056 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +69,14 @@
 				6BAE5F5A24BB57F700DF3056 /* Info.plist */,
 			);
 			path = Browser;
+			sourceTree = "<group>";
+		};
+		6BAE5F6024BB5A8900DF3056 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BAE5F6124BB5A8900DF3056 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,7 +306,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kiseleff.Browser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kiseleff.Browser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
