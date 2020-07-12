@@ -16,24 +16,62 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0L-Co-39Q">
-                                <rect key="frame" x="0.0" y="64" width="414" height="832"/>
+                                <rect key="frame" x="0.0" y="78" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amd-hS-9xh">
+                                <rect key="frame" x="348" y="44" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="9ST-9D-aHd"/>
+                                </constraints>
+                                <state key="normal" title="Forward"/>
+                                <connections>
+                                    <action selector="forwardButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P6O-MV-kPN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bf8-tD-4WJ">
+                                <rect key="frame" x="10" y="44" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="aGk-GR-y2P"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQi-Fh-dWz"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cre-20-Sdf">
+                                <rect key="frame" x="74" y="44" width="266" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="lAC-oM-syB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="amd-hS-9xh" secondAttribute="trailing" constant="10" id="6tD-TU-nms"/>
+                            <constraint firstItem="Cre-20-Sdf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9HR-Pv-TLW"/>
+                            <constraint firstItem="amd-hS-9xh" firstAttribute="leading" secondItem="Cre-20-Sdf" secondAttribute="trailing" constant="8" id="IFh-6Q-4F0"/>
+                            <constraint firstItem="amd-hS-9xh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Nch-oz-fEU"/>
+                            <constraint firstItem="N0L-Co-39Q" firstAttribute="top" secondItem="Cre-20-Sdf" secondAttribute="bottom" id="cPX-Ar-fJO"/>
                             <constraint firstItem="N0L-Co-39Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eX2-Md-Q42"/>
-                            <constraint firstAttribute="bottom" secondItem="N0L-Co-39Q" secondAttribute="bottom" id="hg1-Ei-kVR"/>
-                            <constraint firstItem="N0L-Co-39Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="s3b-5C-9Vk"/>
+                            <constraint firstAttribute="bottom" secondItem="N0L-Co-39Q" secondAttribute="bottom" id="kmN-Ej-QV7"/>
+                            <constraint firstItem="Cre-20-Sdf" firstAttribute="leading" secondItem="bf8-tD-4WJ" secondAttribute="trailing" constant="8" id="o3Y-lP-WPc"/>
+                            <constraint firstItem="bf8-tD-4WJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ooM-cA-krq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N0L-Co-39Q" secondAttribute="trailing" id="w2Z-Ru-szu"/>
+                            <constraint firstItem="bf8-tD-4WJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zrM-XY-QMp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="bf8-tD-4WJ" id="nn3-Ae-pv8"/>
+                        <outlet property="forwardButton" destination="amd-hS-9xh" id="GY0-jS-nrm"/>
+                        <outlet property="urlTextField" destination="Cre-20-Sdf" id="VJv-px-ecM"/>
                         <outlet property="webView" destination="N0L-Co-39Q" id="vEc-Lc-C2A"/>
                     </connections>
                 </viewController>
