@@ -19,8 +19,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "https://www.google.com/")
+        urlTextField.delegate = self
+        
+        let homePage = "https://www.google.com/"
+        let url = URL(string: homePage)
         let request = URLRequest(url: url!)
+        
+        urlTextField.text = homePage
+        
         webView.load(request)
         webView.allowsBackForwardNavigationGestures = true
     }
@@ -35,3 +41,18 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let urlString = textField.text!
+        let url = URL(string: urlString)!
+        let request = URLRequest(url: url)
+        
+        webView.load(request)
+        
+        textField.resignFirstResponder()
+        
+        return true
+    }
+}
